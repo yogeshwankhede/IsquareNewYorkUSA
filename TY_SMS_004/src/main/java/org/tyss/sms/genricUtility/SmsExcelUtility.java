@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -75,6 +76,37 @@ public class SmsExcelUtility {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
+	}
+	/**
+	 * This method is to fetch mutiple data from excel row 
+	 * @param cellNum
+	 * @param sheetName
+	 * @return
+	 */
+	
+	public ArrayList<String> getMultipleDataFromExcelRow(int cellNum, String sheetName) {
+		 ArrayList<String> list = new ArrayList<String>();
+		Sheet sheet = workbook.getSheet(sheetName);
+		int rowcount = sheet.getLastRowNum();
+
+		for(int i=1;i<=rowcount;i++) {
+			String data = new DataFormatter().formatCellValue(sheet.getRow(i).getCell(cellNum));
+			list.add(data);
+		}
+		return list;
+	}
+	
+	
+	
+	public ArrayList<String> getMultipleDataFromExcelCell(int rowNum, String sheetName) {
+		 ArrayList<String> list = new ArrayList<String>();
+		Sheet sheet = workbook.getSheet(sheetName);
+		int cellcount = sheet.getRow(rowNum).getLastCellNum();
+		for(int i=1;i<=cellcount;i++) {
+			String data = new DataFormatter().formatCellValue(sheet.getRow(rowNum).getCell(i));
+			list.add(data);
+		}
+		return list;
 	}
 
 	/**

@@ -16,6 +16,9 @@ public class Sms_Admin_TeacherAttendancePreview {
 	@FindBy(xpath="//button[@class='btn btn-primary']")
 	private WebElement submitBtn;
 	
+	@FindBy(xpath="//select[@id='grade']")
+	private WebElement gradeDropDown;
+	
 	
 	//business Logic
 	public void setTeacherPreview(SmsWebDriverUtility webDriverUtility,SmsExcelUtility smsExcelUtility) {
@@ -24,6 +27,11 @@ public class Sms_Admin_TeacherAttendancePreview {
 		webDriverUtility.dropdownByText(yearSelectDropDown, value);
 		
 		
+	}
+	
+	public void setGrade(SmsWebDriverUtility webdriverutil) {
+		webdriverutil.dropdownByText(gradeDropDown, "Grade 1");
+		gradeDropDown.click();
 	}
 
 }

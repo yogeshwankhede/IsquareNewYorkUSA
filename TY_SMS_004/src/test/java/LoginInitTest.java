@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebDriver;
 import org.tyss.sms.genricUtility.IConnect;
 import org.tyss.sms.genricUtility.SmsExcelUtility;
@@ -26,14 +28,26 @@ public class LoginInitTest {
 		String password=fileUtility.getDataFromProperty("password").trim();
 		String url=fileUtility.getDataFromProperty("url");
 		String timeout=fileUtility.getDataFromProperty("timeouts");
+		System.out.println(username+password+url);
 		
 		
 		//get data from excel
+		excelUtility.initExcelFile(IConnect.SMSEXCELPATH);
+		ArrayList<String> multiData = excelUtility.getMultipleDataFromExcelRow(2, "Admin_Student_AddStudent");
+		int count = multiData.size();
+		for(int i=1;i<count;i++) {
+			String data = multiData.get(i);
+			
+			System.out.println(data);
+			
+		}
+		
 		
 		
 		
 		//launch the browser in runtime
 		WebDriver driver = webdriverUtil.setupDriver(browser);
+		webdriverUtil.openApplication(url);
 		
 		//convert string to long
 		long longTimeout = javaUtility.convertStringToLong(timeout);
@@ -46,6 +60,9 @@ public class LoginInitTest {
 		//Create objects of pom classes
 		SmsLoginPage loginPage = new SmsLoginPage(driver);
 		Sms_CommonHomePage homePage = new Sms_CommonHomePage(driver);
+		
+		//init methods
+		loginPage.login(username,password);
 		
 		
 		

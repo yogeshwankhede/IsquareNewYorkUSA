@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SmsLoginPage {
+	WebDriver driver=null;
 	@FindBy(id="email")
 	private WebElement loginTxtBox;
 	
@@ -17,14 +18,17 @@ public class SmsLoginPage {
 	
 	//init
 	public SmsLoginPage(WebDriver driver) {
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	 //SetterMethod
-	public void login(String un,String pwd) {
-		loginTxtBox.sendKeys(un);
-		passTxtBox.sendKeys(pwd);
-		loginBtn.sendKeys(pwd);
+	public  Sms_CommonHomePage login(String username,String password) {
+		loginTxtBox.sendKeys(username);
+		passTxtBox.sendKeys(password);
+		loginBtn.click();
+		//System.out.println(username+password);
+		return new Sms_CommonHomePage(driver);
 		
 	}
 	

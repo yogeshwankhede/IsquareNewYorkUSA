@@ -37,7 +37,7 @@ This system exists to simplify information tracking for both parents and adminis
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.6.0</version>
-    <scope>test</scope>
+    
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

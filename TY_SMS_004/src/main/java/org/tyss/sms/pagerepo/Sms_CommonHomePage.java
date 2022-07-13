@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 public class Sms_CommonHomePage {
 
 	@FindBy(xpath = "//span[text()='Dashboard']")
-	private static WebElement DashboardTab;
+	private WebElement DashboardTab;
 	@FindBy(xpath ="//span[text()='My Profile']")
-	private static WebElement MyProfileTab;
+	private WebElement MyProfileTab;
 	@FindBy(xpath ="//span[text()='Classroom']")
 	private WebElement ClassroomTab;
 	@FindBy(xpath  ="//span[text()='Grade']")
@@ -79,11 +79,11 @@ public class Sms_CommonHomePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public static void setSignOutBtn() {
+	public  void setSignOutBtn() {
 		 SignOutBtn.click();;
 	}
 	
-	public static void setMyProfileTab() {
+	public  void setMyProfileTab() {
 		MyProfileTab.click();
 	}
 /**
@@ -94,75 +94,79 @@ public class Sms_CommonHomePage {
 	}
 
 	public void getGradeTab() {
-		 GradeTab.click();;
+		 GradeTab.click();
 	}
 
 	public void getSubjectTab() {
-		 SubjectTab.click();;
+		 SubjectTab.click();
 	}
 
-	public void getTeacherTab() {
-		 TeacherTab.click();;
+	public Sms_CommonHomePage getTeacherTab() {
+		 TeacherTab.click();
+		 return this;
 	}
 
 	public void getAddTeacherTab() {
-		 AddTeacherTab.click();;
+		 AddTeacherTab.click();
 	}
 
 	public void getAllTeacherTab() {
-		 AllTeacherTab.click();;
+		 AllTeacherTab.click();
 	}
 
 	public void getSubjectRoutineTab() {
-		 SubjectRoutineTab.click();;
+		 SubjectRoutineTab.click();
 	}
 
 	public void getTimetableTab() {
-		 TimetableTab.click();;
+		 TimetableTab.click();
 	}
 
-	public void getStudentTab() {
-		 StudentTab.click();;
+	public Sms_CommonHomePage getStudentTab() {
+		 StudentTab.click();
+		 return this;
 	}
 
-	public void getAddStudentTab() {
-		 AddStudentTab.click();;
+	public Sms_CommonHomePage getAddStudentTab() {
+		 AddStudentTab.click();
+		 return this;
 	}
 
-	public void getLeaveStudentTab() {
-		 LeaveStudentTab.click();;
+	public Sms_CommonHomePage getLeaveStudentTab() {
+		 LeaveStudentTab.click();
+	return this;
 	}
 
 	public void getStudentPaymentTab() {
-		 StudentPaymentTab.click();;
+		 StudentPaymentTab.click();
 	}
 
 	public void getAttendance() {
-		 Attendance.click();;
+		 Attendance.click();
 	}
 
 	public void getAddAttendanceTab() {
-		 AddAttendanceTab.click();;
+		 AddAttendanceTab.click();
 	}
 
-	public void getStudentAttendanceHistoryTab() {
-		 StudentAttendanceHistoryTab.click();;
+	public void setStudentAttendanceHistoryTab() {
+		 StudentAttendanceHistoryTab.click();
 	}
 
 	public void getTeacherAttendanceHistoryTab() {
-		 TeacherAttendanceHistoryTab.click();;
+		 TeacherAttendanceHistoryTab.click();
 	}
 
 	public void getExamTab() {
-		 ExamTab.click();;
+		 ExamTab.click();
 	}
 
 	public void getCreateExamTab() {
-		 CreateExamTab.click();;
+		 CreateExamTab.click();
 	}
 
 	public void getExamTimetableTab() {
-		 ExamTimetableTab.click();;
+		 ExamTimetableTab.click();
 	}
 
 	public void getStudentExamMarksTab() {
@@ -209,7 +213,7 @@ public class Sms_CommonHomePage {
 		 HomeTab.click();;
 	}
 
-	public static void getDashboardTab() {
+	public void getDashboardTab() {
 		DashboardTab.click();;
 	}
 	

@@ -21,7 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SmsWebDriverUtility {
-	private WebDriver driver;
+	private static WebDriver driver;
 	private Actions act;
 	/**
 	 * this method is used to setup the driver instance
@@ -29,7 +29,7 @@ public class SmsWebDriverUtility {
 	 * @return
 	 * 
 	 */
-	public WebDriver setupDriver(String browser) {
+	public static WebDriver setupDriver(String browser) {
 		switch (browser) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
@@ -70,7 +70,7 @@ public class SmsWebDriverUtility {
 	 * 
 	 * @param url
 	 */
-	public void openApplication(String url) {
+	public static void openApplication(String url) {
 		driver.get(url);
 	}
 	/**

@@ -1,7 +1,10 @@
 package org.tyss.sms.genricUtility;
 
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 public class SmsJavaUtility {
@@ -60,6 +63,23 @@ public class SmsJavaUtility {
 	 */
 	public String getCurrentDate(String Strategy) {
 		return new SimpleDateFormat(Strategy).format(new Date());
+	}
+	/**
+	 * This method is to convert month String value into resp. int value
+	 * @param monthName
+	 * @param Strategy
+	 * @return
+	 */
+	public int convertMonthFromStringToInt(String monthName,String Strategy) {
+		return DateTimeFormatter.ofPattern(Strategy)
+				.withLocale(Locale.ENGLISH)
+				.parse(monthName)
+				.get(ChronoField.MONTH_OF_YEAR);	
+	}
+	public String convertFromIntToString(int number) {
+		return String.valueOf(number);
+		
+		
 	}
 
 
