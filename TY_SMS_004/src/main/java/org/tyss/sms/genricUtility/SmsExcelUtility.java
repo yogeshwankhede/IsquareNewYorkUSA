@@ -108,6 +108,9 @@ public class SmsExcelUtility {
 		}
 		return list;
 	}
+	public void getCellData() {
+		
+	}
 
 	/**
 	 * This method is to close connection

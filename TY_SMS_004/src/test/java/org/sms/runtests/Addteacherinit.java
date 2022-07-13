@@ -1,3 +1,4 @@
+package org.sms.runtests;
 import java.util.ArrayList;
 
 import org.openqa.selenium.WebDriver;
@@ -9,9 +10,8 @@ import org.tyss.sms.genricUtility.SmsWebDriverUtility;
 import org.tyss.sms.pagerepo.SmsLoginPage;
 import org.tyss.sms.pagerepo.Sms_CommonHomePage;
 
-public class LoginInitTest {
+public class Addteacherinit {
 	public static void main(String[] args) {
-		
 		//Initalize the genric utilities
 		SmsWebDriverUtility webdriverUtil = new SmsWebDriverUtility();
 		SmsExcelUtility excelUtility = new SmsExcelUtility();
@@ -33,7 +33,7 @@ public class LoginInitTest {
 		
 		//get data from excel
 		excelUtility.initExcelFile(IConnect.SMSEXCELPATH);
-		ArrayList<String> multiData = excelUtility.getMultipleDataFromExcelRow(2, "Admin_Student_AddStudent");
+		ArrayList<String> multiData = excelUtility.getMultipleDataFromExcelRow(1, "Admin-Add Teacher");
 		int count = multiData.size();
 		for(int i=1;i<count;i++) {
 			String data = multiData.get(i);
@@ -59,15 +59,13 @@ public class LoginInitTest {
 		
 		//Create objects of pom classes
 		SmsLoginPage loginPage = new SmsLoginPage(driver);
-		Sms_CommonHomePage homePage = new Sms_CommonHomePage(driver);
+//		Sms_CommonHomePage commonPage = new Sms_CommonHomePage(driver);
+//		Sms_CommonHomePage homePage = new Sms_CommonHomePage(driver);
 		
 		//init methods
-		loginPage.login(username,password);
-		
-		
-		
+		loginPage.login(username,password).getTeacherTab().getAddTeacherTab();
 		
 	}
+	
 
 }
- 
