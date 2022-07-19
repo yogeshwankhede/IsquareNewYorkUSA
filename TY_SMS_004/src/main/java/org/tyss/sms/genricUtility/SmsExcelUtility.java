@@ -108,7 +108,9 @@ public class SmsExcelUtility {
 		}
 		return list;
 	}
-	public void getCellData() {
+	public int getCellData(String sheetName, int rowNum) {
+		int data = workbook.getSheet(sheetName).getRow(rowNum).getLastCellNum();
+		return data;
 		
 	}
 

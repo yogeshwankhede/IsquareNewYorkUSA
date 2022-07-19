@@ -15,7 +15,6 @@ public class InitClasses {
 		excelUtility = new SmsExcelUtility();
 		fileUtility = new SmsFileUtilty();
 		javaUtility = new SmsJavaUtility();
-
 	}
 
 }

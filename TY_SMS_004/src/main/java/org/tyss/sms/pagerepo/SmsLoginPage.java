@@ -1,12 +1,11 @@
 package org.tyss.sms.pagerepo;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.tyss.sms.genricUtility.DriverClass;
 
 public class SmsLoginPage {
-	WebDriver driver=null;
 	@FindBy(id="email")
 	private WebElement loginTxtBox;
 	
@@ -17,9 +16,8 @@ public class SmsLoginPage {
 	private WebElement loginBtn;
 	
 	//init
-	public SmsLoginPage(WebDriver driver) {
-		this.driver=driver;
-		PageFactory.initElements(driver, this);
+	public SmsLoginPage() {
+		PageFactory.initElements(DriverClass.getInstance().getDriver(), this);
 	}
 	
 	 //SetterMethod
@@ -28,8 +26,7 @@ public class SmsLoginPage {
 		passTxtBox.sendKeys(password);
 		loginBtn.click();
 		//System.out.println(username+password);
-		return new Sms_CommonHomePage(driver);
-		
+		return new Sms_CommonHomePage();
 	}
 	
 	

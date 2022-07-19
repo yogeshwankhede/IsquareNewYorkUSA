@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.tyss.sms.genricUtility.DriverClass;
 
 public class Sms_CommonHomePage {
 
@@ -75,8 +76,8 @@ public class Sms_CommonHomePage {
 	private static WebElement SignOutBtn;
 	
 	
-	public Sms_CommonHomePage(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public Sms_CommonHomePage() {
+		PageFactory.initElements(DriverClass.getInstance().getDriver(), this);
 	}
 	
 	public  void setSignOutBtn() {
@@ -106,12 +107,14 @@ public class Sms_CommonHomePage {
 		 return this;
 	}
 
-	public void getAddTeacherTab() {
+	public Admin_AddTeacherPage getAddTeacherTab() {
 		 AddTeacherTab.click();
+		 return new Admin_AddTeacherPage();
 	}
 
-	public void getAllTeacherTab() {
+	public ParentTeacher_AllTeacher getAllTeacherTab() {
 		 AllTeacherTab.click();
+		 return new ParentTeacher_AllTeacher();
 	}
 
 	public void getSubjectRoutineTab() {

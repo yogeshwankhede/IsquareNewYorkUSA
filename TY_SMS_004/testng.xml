@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="org.sms.runtests.Addteacherinit"/>
+      <class name="org.tyss.sms.initclasses.Admin_AddTeacherPageTest"/>
+      <class name="org.tyss.sms.initclasses.LoginInitTest"/>
+      <class name="org.tyss.sms.initclasses.InitTeacherAttendancePageTest"/>
+      <class name="org.sms.parent.MySonsAttendance"/>
+      <class name="org.tyss.sms.initclasses.Admin_LeaveStudentPageTest"/>
+      <class name="org.tyss.sms.testng_practice.TestNGCreateCustomerTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

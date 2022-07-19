@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Admin_LeaveStudentPageTest">
+      <class name="org.tyss.sms.initclasses.Init_Parent_AllTeacher">
         <methods>
           <include name="PreSetUp"/>
           <include name="intCls"/>
+          <include name="closeBrowser"/>
           <include name="genrateRandomNum"/>
-          <include name="loginTest"/>
+          <include name="P_AllTeacher"/>
         </methods>
-      </class> <!-- Admin_LeaveStudentPageTest -->
+      </class> <!-- org.tyss.sms.initclasses.Init_Parent_AllTeacher -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

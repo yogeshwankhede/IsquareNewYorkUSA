@@ -1,9 +1,9 @@
-package org.tyss.sms.pagerepo;
+ package org.tyss.sms.pagerepo;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.tyss.sms.genricUtility.DriverClass;
 import org.tyss.sms.genricUtility.SmsWebDriverUtility;
 
 public class Admin_LeaveStudentPage {
@@ -22,8 +22,8 @@ public class Admin_LeaveStudentPage {
 	@FindBy(xpath="//button[@id='btnSubmit1']")
 	private WebElement submitbtn;
 
-	public Admin_LeaveStudentPage(WebDriver driver) {
-		PageFactory.initElements(driver,this);
+	public Admin_LeaveStudentPage() {
+		PageFactory.initElements(DriverClass.getInstance().getDriver(),this);
 	}
 	
 	

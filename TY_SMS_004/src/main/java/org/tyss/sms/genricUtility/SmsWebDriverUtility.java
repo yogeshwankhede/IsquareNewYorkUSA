@@ -23,13 +23,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SmsWebDriverUtility {
 	private static WebDriver driver;
 	private Actions act;
+		
+	
+		
+		
 	/**
 	 * this method is used to setup the driver instance
 	 * @param browser
 	 * @return
 	 * 
 	 */
-	public static WebDriver setupDriver(String browser) {
+	public  WebDriver setupDriver(String browser) {
 		switch (browser) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
